@@ -1,32 +1,40 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * main - Program that print all possible combo of 2digits number
- * Return: 0 (Success)
+ * main - Entry Point
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
  */
+
 int main(void)
 {
-	int n, m;
+	int firstDigit = 0, seconDigit;
 
-	for (n = 0; n < 100; n++)
+	while (firstDigit <= 99)
 	{
-		for (m = 0; m < 100; m++)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			if (n < m)
+			if (seconDigit != firstDigit)
 			{
-				putchar((n / 10) + 48);
-				putchar((n % 10) + 48);
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
 				putchar(' ');
-				putchar((m / 10) + 48);
-				putchar((m % 10) + 48);
-				if (n != 98 || m != 99)
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
+			++seconDigit;
 		}
+		++firstDigit;
 	}
+	putchar('\n');
 
 	return (0);
 }
