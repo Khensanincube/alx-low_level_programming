@@ -1,20 +1,18 @@
 #include "main.h"
-/**
- * print_alphabet_x10 - function to print abc
- *
- * Return: 0.
- */
-void print_alphabet_x10(void)	/* prints x10 alphabets */
-{
-	char c, i;
 
-	for (i = 0; i <= 9; i++)
-	{
-		for (c = 'a'; c <= 'z'; c++)
-		{
-			_putchar(c);
-		}
-	_putchar('\n');
-	}
-	return (0);
+/**
+ * _islower - Checks for lowercase alphabet
+ * @c: Character to be checked
+ * Return: if character is lowercase, otherwise
+ */
+
+int _islower(int c)
+
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
 }
+
+
